@@ -24,7 +24,7 @@ augmentation_generator <- flow_images_from_data(
   generator = datagen,
   batch_size = 10,
   shuffle = TRUE,
-  save_to_dir = "D:/Documents/Practicum2/Practicum2/data/train", #add the seedling directory for each one
+  save_to_dir = "D:/Documents/Practicum2/Practicum2/data/train/<directory name>", #add the seedling directory for each one
   save_prefix = "aug",
   save_format = "png"
 )
@@ -34,6 +34,7 @@ classes <- c("BlackGrass", "Charlock", "Cleavers", "Common Chickweed",
              "Sentless Mayweed", "Shepherds Purse", "Small Flowered Cranesbill", 
              "Sugar Beet")
 ######################Show some of the randomly augmented pictures, ,It remixes existing information
+train_augment <- "D:/Documents/Practicum2/Practicum2/data/train/Maize"
 fnames <-list.files(train_dir, full.names = TRUE)
 img_path <- fnames[[3]] #selecting one image to demonstrate augmentation on
 #read and rescale image
