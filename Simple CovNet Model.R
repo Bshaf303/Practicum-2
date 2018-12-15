@@ -37,6 +37,7 @@ train_generator <- flow_images_from_directory(
   batch_size = 20,
   class_mode = "categorical" #multiclass
 )
+table(factor(train_generator$classes))
 #validation images
 validation_generator <- flow_images_from_directory(
   validation_dir,
@@ -45,6 +46,7 @@ validation_generator <- flow_images_from_directory(
   batch_size = 20, 
   class_mode = "categorical" 
 )
+table(factor(validation_generator$classes))
 #Show output of train generator, batches of 150X150 RGB shape (20, 150, 150, 3) 20 samples
 batch <- generator_next(train_generator)
 str(batch)
@@ -204,6 +206,7 @@ test_generator <- flow_images_from_directory(
   batch_size = 20,
   class_mode = "categorical"
 )
+table(factor(test_generator$classes))
 #Run modelprediction on test images
 model %>% evaluate_generator(test_generator, steps = 28) 
 #########Model Validation
