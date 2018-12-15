@@ -197,6 +197,9 @@ history <- model %>% fit_generator(
   validation_steps = 50
 )
 plot(history)
+save_model_hdf5(model, "Seedlings_12-14_VGG16_unfreeze.h5")
+#Toload model later
+#model <- load_model_hdf5("Seedlings_12-14_VGG16_unfreeze.h5")
 #Run Test Images through the generator
 test_generator <- flow_images_from_directory(
   test_dir,
@@ -249,5 +252,5 @@ rs <- roc_multi[['rocs']]
 plot.roc(rs[[1]]) #ROC single summary plot
 plot(plot.roc(rs[[1]]))
 plot.roc(rs[[1]]) #ROC single summary plot
-#This plots the 12 class ROC
+#This plots the 12 class ROC Ontop of the previous MEAN ROC
 sapply(2:length(rs),function(i) lines.roc(rs[[i]],col=i)) 
