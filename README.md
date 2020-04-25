@@ -1,4 +1,4 @@
-# Practicum-2
+# ReadMe
 Seedling Multi-class Image Classification Problem
 
 This project is a multi-class image classification problem using convolutional neural networks in Rstudio with the Keras library.
